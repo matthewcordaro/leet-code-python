@@ -38,13 +38,11 @@ class Solution:
     return index
 
   def isAlphaNumeric(self, c: chr) -> bool:
-    if ord('0') <= ord(c) <= ord('9'):
-      return True
-    if ord('a') <= ord(c) <= ord('z'):
-      return True
-    if ord('A') <= ord(c) <= ord('Z'):
-      return True
-    return False
+    return (
+        ord('0') <= ord(c) <= ord('9') or
+        ord('a') <= ord(c) <= ord('z') or
+        ord('A') <= ord(c) <= ord('Z')
+    )
 
 
 import unittest
