@@ -1,3 +1,6 @@
+import unittest
+
+
 class Solution:
   def isPalindrome(self, s: str) -> bool:
     # Base cases:
@@ -28,24 +31,22 @@ class Solution:
 
   # Returns next valid location
   def getNextAlphaLocation(self, s: str, index: int) -> int:
-    # Up or Down
+    # Direction
     step = 1
     if index < 0:
       step = -1
-    # Outside of a-z? get next
+    # Find Next
     while not self.isAlphaNumeric(s[index]):
       index += step
     return index
 
-  def isAlphaNumeric(self, c: chr) -> bool:
+  @staticmethod
+  def isAlphaNumeric(c: chr) -> bool:
     return (
         ord('0') <= ord(c) <= ord('9') or
         ord('a') <= ord(c) <= ord('z') or
         ord('A') <= ord(c) <= ord('Z')
     )
-
-
-import unittest
 
 
 class TestSolution(unittest.TestCase):
@@ -63,5 +64,9 @@ class TestSolution(unittest.TestCase):
     self.assertFalse(self.a.isPalindrome("arst"))
 
 
-if __name__ == '__main__':
+def main():
   unittest.main()
+
+
+if __name__ == '__main__':
+  main()

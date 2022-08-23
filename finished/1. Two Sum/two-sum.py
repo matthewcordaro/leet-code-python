@@ -1,3 +1,4 @@
+import unittest
 from typing import List
 
 
@@ -21,9 +22,21 @@ class Solution2:
       hash_dictionary[target - number] = i
 
 
-if __name__ == '__main__':
-  a = Solution()
-  print(a.twoSum([1, 2, 3, 4, 5, 6], 4))
+class TestSolution(unittest.TestCase):
+  def setUp(self):
+    self.sol = Solution()
+    self.sol2 = Solution2()
 
-  a = Solution2()
-  print(a.twoSum([1, 2, 3, 4, 5, 6], 4))
+  def test_twoSum(self):
+    self.assertEqual(self.sol.twoSum([1, 2, 3, 4, 5, 6], 4), [0, 2])
+
+  def test_twoSum_2(self):
+    self.assertEqual(self.sol2.twoSum([1, 2, 3, 4, 5, 6], 4), [2, 0])
+
+
+def main():
+  unittest.main()
+
+
+if __name__ == '__main__':
+  main()
