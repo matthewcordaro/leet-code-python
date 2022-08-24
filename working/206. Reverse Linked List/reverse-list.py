@@ -1,5 +1,5 @@
 import unittest
-from typing import List, Optional
+from typing import Optional
 
 
 # Definition for singly-linked list.
@@ -10,9 +10,22 @@ class ListNode:
 
 
 # O(n)
+# The better way with memory.
+class Solution:
+  def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    rev: Optional[ListNode] = None
+    while head is not None:
+      temp = head.next
+      head.next = rev
+      rev = head
+      head = temp
+    return rev
+
+
+# O(n)
 # There is probably better way with memory updating the pointers backwards
 # But this is best for computation.
-class Solution:
+class Solution2:
   def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     r: Optional[ListNode] = None
     while head is not None:
