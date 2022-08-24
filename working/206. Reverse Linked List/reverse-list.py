@@ -5,6 +5,7 @@ from typing import List
 # O()
 class Solution:
   # FUNCTION HERE
+  pass
 
 
 class TestSolution(unittest.TestCase):
