@@ -1,5 +1,5 @@
 # LeetCode Python 
-These are practice problems I'm working on from [LeetCode.com](https://leetcode.com/problemset/) written in Python 3.
+These are practice problems I'm working on from [LeetCode.com](https://leetcode.com/problemset/) written in Python 3, starting with the [🚀 Neet Code 150](https://neetcode.io/).
 
 ## Folder Structure
 Each solution will be in a `main.py` located in a folder named to match the problem from LeetCode.com's format of: the problem number followed by its name. Also, within the folder should be a `.url` link to each problem on the website. 
