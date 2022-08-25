@@ -12,9 +12,7 @@ class TreeNode:
 # O(n)
 class Solution:
   def maxDepth(self, root: Optional[TreeNode]) -> int:
-    if root:
-      return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left))
-    return 0
+    return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
 class TestSolution(unittest.TestCase):
