@@ -46,7 +46,7 @@ class Solution:
         direction = Direction.UP
       elif direction is Direction.UP:
         y -= 1
-        if y is not -1 and not visited[y][x]: continue
+        if not visited[y][x]: continue
         x, y = x+1, y+1
         direction = Direction.RIGHT
     return l
