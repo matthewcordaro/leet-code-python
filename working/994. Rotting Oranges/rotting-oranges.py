@@ -16,6 +16,15 @@ def freshExistsHere(y, x, grid: List[List[int]]) -> bool:
          grid[y][x] == 1
 
 
+def getListOfCellType(t: int, grid: List[List[int]]) -> List[(int, int)]:
+  l: [(int, int)] = []
+  for y in range(len(grid)):  # rows
+    for x in range(len(grid[y])):
+      if grid[y, x] == t:
+        l.append((y, x))
+  return l
+
+
 # if no update, returns None
 def updateAdjacent(y: int, x: int, grid: List[List[int]]) -> List[List[int]]:
   updated = False
@@ -44,7 +53,7 @@ def turnOranges(grid: List[List[int]]) -> List[List[int]]:
     for x in range(len(grid[y])):
       if grid[y][x] == 2:
         rotting_locations.append((y, x))
-
+  # ToDo There is a better way when we maintain this and don't calculate it all the time.
   updated = False
   for (y, x) in rotting_locations:
     new_grid = updateAdjacent(y, x, grid)
@@ -55,6 +64,43 @@ def turnOranges(grid: List[List[int]]) -> List[List[int]]:
   if not updated:
     return None
   return grid
+
+
+def rot(grid: List[List[int]]) -> int:
+  # get initial rot
+  rotted_locations: set[int, int] = set()
+  for y in range(len(grid)):  # rows
+    for x in range(len(grid[y])):
+      if grid[y][x] == 2:
+        rotted_locations.add(y, x)
+  if len(rotted_locations) is 0:
+    return 0
+
+  turns = 0
+  last_rot_locations = rotted_locations
+  new_grid = grid
+  while thereExistsAFreshOrange(grid):
+    # next rot
+    for lrl in last_rot_locations:
+      new_locations = updateAdjacentList(*lrl, grid)
+      if new_locations is not 0:
+        new_grid = updateAdjacent(*lrl, new_grid)
+
+
+    pass
+
+
+def updateAdjacentList(y: int, x: int, grid: List[List[int]]) -> List[(int, int)]:
+  l: [(int, int)] = []
+  if freshExistsHere(y - 1, x, grid):
+    l.append((y - 1, x))
+  if freshExistsHere(y + 1, x, grid):
+    l.append((y + 1, x))
+  if freshExistsHere(y, x - 1, grid):
+    l.append((y, x - 1))
+  if freshExistsHere(y, x + 1, grid):
+    l.append((y, x + 1))
+  return l
 
 
 class Solution:
