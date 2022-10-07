@@ -1,10 +1,11 @@
 import unittest
+from typing import List
 
 
 # O()
 class Solution:
-  # FUNCTION HERE
-  pass
+  def someFunction(self, variable: List[int]):
+    pass
 
 
 class TestSolution(unittest.TestCase):
@@ -12,7 +13,7 @@ class TestSolution(unittest.TestCase):
     self.sol = Solution()
 
   def test_solution(self):
-    self.assertEqual(1, 1)
+    self.assertEqual(self.sol.someFunction([]), 0)
 
 
 def main():
