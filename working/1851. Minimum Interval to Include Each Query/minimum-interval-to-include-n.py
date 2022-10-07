@@ -20,10 +20,10 @@ class Solution:
         # if 0 between them it's a possible solution
         if left - query <= 0 <= right - query:
           minimum = min(minimum, size_of_interval[idi])
-        if minimum is not a_very_large_number:
-          solution[idq] = minimum
-        else:
-          solution[idq] = -1
+      if minimum is not a_very_large_number:
+        solution.append(minimum)
+      else:
+        solution.append(-1)
     return solution
 
 
@@ -32,10 +32,7 @@ class TestSolution(unittest.TestCase):
     self.sol = Solution()
 
   def test_solution(self):
-    self.assertEqual(self.sol.minInterval(
-      intervals=[[1, 4], [2, 4], [3, 6], [4, 4]],
-      queries=[2, 3, 4, 5]),
-      [3, 3, 1, 4])
+    self.assertEqual([3, 3, 1, 4], self.sol.minInterval(intervals=[[1, 4], [2, 4], [3, 6], [4, 4]], queries=[2, 3, 4, 5]))
 
 
 def main():
