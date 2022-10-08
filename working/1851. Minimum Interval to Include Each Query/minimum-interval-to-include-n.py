@@ -16,9 +16,7 @@ class Solution:
     for idq, query in enumerate(queries):
       minimum = a_very_large_number
       for idi, (left, right) in enumerate(intervals):
-        # subtract each query from each integer in the interval
-        # if 0 between them it's a possible solution
-        if left - query <= 0 <= right - query:
+        if left <= query <= right:
           minimum = min(minimum, size_of_interval[idi])
       if minimum is not a_very_large_number:
         solution.append(minimum)
