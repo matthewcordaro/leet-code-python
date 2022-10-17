@@ -4,12 +4,13 @@ import unittest
 # O(b) b = number of bits
 class Solution:
   def getSum(self, a: int, b: int) -> int:
-    # Mask to handle maximum carry (negative number addition)
+    # Mask to handle maximum carry for negative addition
+    # (Negative number addition via positive way)
     while (b & 0xFFFFFFFF) > 0:
       carry = (a & b) << 1
       a = (a ^ b)  # poor man's addition (addition without carry over)
       b = carry
-    # handle negative
+    # handle negative case
     return (a & 0xFFFFFFFF) if b > 0 else a
 
 
