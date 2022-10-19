@@ -11,8 +11,7 @@ class Solution:
     while len(stones) > 1:
       num = heapq.heappop(stones) - heapq.heappop(stones)
       if num != 0: heapq.heappush(stones, num)
-
-    return 0 if len(stones) == 0 else -stones[0]
+    return -stones[0] if stones else 0
 
 
 class TestSolution(unittest.TestCase):
@@ -22,6 +21,7 @@ class TestSolution(unittest.TestCase):
   def test_solution(self):
     self.assertEqual(self.sol.lastStoneWeight([2, 7, 4, 1, 8, 1]), 1)
     self.assertEqual(self.sol.lastStoneWeight([1]), 1)
+    self.assertEqual(self.sol.lastStoneWeight([]), 0)
 
 
 def main():
