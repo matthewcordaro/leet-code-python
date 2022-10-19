@@ -11,8 +11,8 @@ class Solution:
     while len(stones) > 1:
       num = heapq.heappop(stones) - heapq.heappop(stones)
       if num != 0: heapq.heappush(stones, num)
-    if len(stones) == 0: return 0
-    return -stones[0]
+
+    return 0 if len(stones) == 0 else -stones[0]
 
 
 class TestSolution(unittest.TestCase):
