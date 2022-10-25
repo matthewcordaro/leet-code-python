@@ -14,7 +14,6 @@ class TreeNode:
 
 class Solution:
   def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-    if root is None: return []
     solution: [int] = []
     self.helper(root, solution, 0)
     return solution
