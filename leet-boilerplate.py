@@ -12,6 +12,9 @@ class TestSolution(unittest.TestCase):
     self.sol = Solution()
 
   def test_solution(self):
+    # Documentation on Python site wrong.
+    # Expected: 1st argument
+    # Actual:   2nd argument (items to test)
     self.assertEqual(0, self.sol.someFunction())
 
 
