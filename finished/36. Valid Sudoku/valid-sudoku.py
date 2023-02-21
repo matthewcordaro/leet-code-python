@@ -3,6 +3,7 @@ from typing import List, Iterable
 import numpy as np
 
 
+# Is there a backtracking solution?
 # O()
 class Solution:
   def isValidSudoku(self, board: List[List[str]]) -> bool:
