@@ -45,7 +45,7 @@ class TestSolution(unittest.TestCase):
     self.assertEqual(8, self.sol.compress(
       ["a", "a", "a", "b", "c", "d", "d", "d", "d", "d", "e", "f"]))
 
-    self.assertEqual(3, self.sol.compress(
+    self.assertEqual(4, self.sol.compress(
       ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]))
 
 
