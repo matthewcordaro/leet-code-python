@@ -3,6 +3,7 @@ import unittest
 
 # O()
 class Solution:
+  # noinspection PyMethodMayBeStatic
   def someFunction(self):
     pass
 
