@@ -2,26 +2,31 @@ import unittest
 from typing import Optional
 
 
-# O()
-# Definition for singly-linked list.
 class ListNode:
   def __init__(self, val=0, next=None):
     self.val = val
     self.next = next
 
 
+# O(2n)
 class Solution:
+  # noinspection PyMethodMayBeStatic
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-      if head.next is None: return None
+      if not head.next: return None
+
       count = 1
       node = head
-      while node.next is not None:
+      while node.next:
         node = node.next
         count += 1
+
       if count == n:  # edge case
         return head.next
+
       node = head
-      for _ in range(1, count - n): node = node.next
+      for _ in range(1, count - n):
+        node = node.next
+
       node.next = node.next.next
       return head
 
