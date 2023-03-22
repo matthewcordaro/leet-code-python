@@ -6,7 +6,13 @@ from typing import List
 class Solution:
   # noinspection PyMethodMayBeStatic
   def removeDuplicates(self, nums: List[int]) -> int:
-    pass
+    left = 0
+    for right in range(len(nums)):
+      if nums[left] != nums[right]:
+        left += 1  # new number, move over
+        nums[left] = nums[right]
+    return left + 1
+
 
 
 class TestSolution(unittest.TestCase):
@@ -14,10 +20,7 @@ class TestSolution(unittest.TestCase):
     self.sol = Solution()
 
   def test_solution(self):
-    # Documentation on Python site wrong.
-    # Expected: 1st argument
-    # Actual:   2nd argument (items to test)
-    self.assertEqual([0,1,2,3,4,None,None,None,None,None], self.sol.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
+    self.assertEqual(5, self.sol.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
 
 
 def main():
