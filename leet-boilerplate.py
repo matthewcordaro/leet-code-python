@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 
 
 # O()
@@ -8,19 +8,16 @@ class Solution:
     pass
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
   def setUp(self):
     self.sol = Solution()
 
   def test_solution(self):
-    # Documentation on Python site wrong.
-    # Expected: 1st argument
-    # Actual:   2nd argument (items to test)
     self.assertEqual(0, self.sol.someFunction())
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':
