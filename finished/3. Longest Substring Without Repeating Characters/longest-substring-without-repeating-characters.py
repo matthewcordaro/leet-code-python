@@ -9,10 +9,10 @@ class Solution:
     cs = set()
     l = r = 0
     while r < len(s):
-      if s[r] in cs:  # move left & remove
+      if s[r] in cs:
         cs.remove(s[l])
         l +=1
-      else:  # move right & add
+      else:
         cs.add(s[r])
         mx = max(len(cs), mx)
         r += 1
