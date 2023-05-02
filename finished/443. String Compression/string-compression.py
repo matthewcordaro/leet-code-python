@@ -22,8 +22,6 @@ class Solution:
       for c in str(count):
         chars[end] = c
         end += 1
-    for c in chars: print(c, end='')
-    print()
     return end
 
 
