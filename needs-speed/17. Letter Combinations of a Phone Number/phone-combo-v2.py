@@ -10,19 +10,7 @@ class Solution:
     t9_dict = {'2':"abc", '3':"def", '4':"ghi", '5':"jkl", '6':"mno", '7':"pqrs", '8':"tuv", '9':"wxyz"}
     solution = []
 
-    def depth_first_search(working_solution: str, digit_index: int):
-      # Base Case:  End of solution tree
-      if digit_index == len(digits):
-        solution.append(working_solution)
-        return  # Backtrack
-
-      # Explore:  Try adding each letter to the working solution
-      digit = digits[digit_index]
-      for c in t9_dict[digit]:
-        depth_first_search(working_solution + c, digit_index + 1)
-        # Backtrack:  No need to undo variables, not modified
-
-    depth_first_search("", 0)
+    # IDEA: Storing pairs to not recalculate
     return solution
 
 
