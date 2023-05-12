@@ -3,23 +3,15 @@ import unittest
 
 # O()
 class Solution:
-  SQUARE_NUMBERS = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-
+  SQUARES = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
   def isHappy(self, n: int) -> bool:
-    numbers_hit = set()
-    sum_square = n
-    while True:
-      sum_square = self.sum_square_of_digits(sum_square)
-      if sum_square == 1: return True
-      if sum_square in numbers_hit: return False
-      numbers_hit.add(sum_square)
-
-  def sum_square_of_digits(self, n: int) -> int:
-    s = str(n)
-    sum_square = 0
-    for c in s:
-      sum_square += self.SQUARE_NUMBERS[int(c)]
-    return sum_square
+    num_seen = {1}
+    while n not in num_seen:
+      num_seen.add(n)
+      n_str = str(n)
+      n = 0
+      for c in n_str: n += self.SQUARES[int(c)]
+    return n == 1
 
 
 class TestSolution(unittest.TestCase):
