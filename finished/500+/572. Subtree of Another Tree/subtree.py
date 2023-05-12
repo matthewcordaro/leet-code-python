@@ -18,10 +18,8 @@ class Solution:
     return self.isSameTree(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
   def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-    if not (p or q):
-      return True  # both None
-    elif not (p and q):
-      return False  # different
+    if not (p or q): return True  # both None
+    if not (p and q): return False  # different
     return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 
