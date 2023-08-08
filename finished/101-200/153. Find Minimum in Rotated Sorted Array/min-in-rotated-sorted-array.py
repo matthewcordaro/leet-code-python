@@ -5,7 +5,16 @@ from unittest import TestCase
 class Solution:
     # noinspection PyMethodMayBeStatic
     def findMin(self, nums: list[int]) -> int:
-        pass
+        def rev_bin(low=0, high=len(nums) - 1) -> int:
+            # Pick the smallest when we have two remaining
+            if low + 1 == high:
+                return min(nums[high], nums[low])
+            mid = (high + low) // 2  # not integer safe
+            # Which half do we continue the search in?
+            return rev_bin(low, mid) if nums[low] > nums[mid] else rev_bin(mid, high)
+
+        # Check if only one number OR in order already
+        return nums[0] if len(nums) == 1 or nums[0] < nums[-1] else rev_bin()
 
 
 class TestSolution(TestCase):
