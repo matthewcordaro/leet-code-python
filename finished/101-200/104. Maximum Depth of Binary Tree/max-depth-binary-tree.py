@@ -9,18 +9,19 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 # O(n)
 class Solution:
-  def maxDepth(self, root: Optional[TreeNode]) -> int:
-    return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
 class TestSolution(unittest.TestCase):
-  def setUp(self):
-    self.sol = Solution()
+    def setUp(self):
+        self.sol = Solution()
 
-  def test_solution(self):
-    self.assertEqual(1, 1)
+    def test_solution(self):
+        self.assertEqual(1, 1)
 
 
 def main():
@@ -28,4 +29,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+    main()

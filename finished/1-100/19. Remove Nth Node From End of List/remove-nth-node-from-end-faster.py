@@ -1,31 +1,31 @@
 import unittest
-from typing import Any, Optional
+from typing import Optional
 
 
 class ListNode:
-  def __init__(self, val=0, next=None):
-    self.val = val
-    self.next = next
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
 # O(n+m)
 class Solution:
-  # noinspection PyMethodMayBeStatic
-  def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-    rabbit = turtle = head
+    # noinspection PyMethodMayBeStatic
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        rabbit = turtle = head
 
-    while (n:=n-1)>=0:
-      rabbit = rabbit.next
+        while (n := n - 1) >= 0:
+            rabbit = rabbit.next
 
-    # Edge Case: n == length of list
-    if not rabbit:
-      return head.next
+        # Edge Case: n == length of list
+        if not rabbit:
+            return head.next
 
-    while rabbit:=rabbit.next:
-      turtle = turtle.next
+        while rabbit := rabbit.next:
+            turtle = turtle.next
 
-    turtle.next = turtle.next.next
-    return head
+        turtle.next = turtle.next.next
+        return head
 
 
 # class TestSolution(unittest.TestCase):
@@ -41,4 +41,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+    main()
