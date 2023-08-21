@@ -12,23 +12,23 @@ class TreeNode:
 
 # O()
 class Solution:
-  def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-    if root:
-      s_left = s_right = None
-      if root.left:
-        s_right = self.invertTree(root.left)
-      if root.right:
-        s_left = self.invertTree(root.right)
-      root.left, root.right = s_left, s_right
-    return root
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root:
+            s_left = s_right = None
+            if root.left:
+                s_right = self.invertTree(root.left)
+            if root.right:
+                s_left = self.invertTree(root.right)
+            root.left, root.right = s_left, s_right
+        return root
 
 
 class TestSolution(unittest.TestCase):
-  def setUp(self):
-    self.sol = Solution()
+    def setUp(self):
+        self.sol = Solution()
 
-  def test_solution(self):
-    self.assertEqual(1, 1)
+    def test_solution(self):
+        self.assertEqual(1, 1)
 
 
 def main():
@@ -36,4 +36,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+    main()
