@@ -11,20 +11,21 @@ class TreeNode:
 
 # O(n)
 class Solution:
-  def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-    n, a, b = root.val, p.val, q.val
-    # Found
-    if (a <= n <= b) or (b <= n <= a): return root
-    # Search to the correct side
-    return self.lowestCommonAncestor(root.left, p, q) if a < n else self.lowestCommonAncestor(root.right, p, q)
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        n, a, b = root.val, p.val, q.val
+        # Found
+        if (a <= n <= b) or (b <= n <= a):
+            return root
+        # Search to the correct side
+        return self.lowestCommonAncestor(root.left, p, q) if a < n else self.lowestCommonAncestor(root.right, p, q)
 
 
 class TestSolution(unittest.TestCase):
-  def setUp(self):
-    self.sol = Solution()
+    def setUp(self):
+        self.sol = Solution()
 
-  def test_solution(self):
-    self.assertEqual(1, 1)
+    def test_solution(self):
+        self.assertEqual(1, 1)
 
 
 def main():
@@ -32,4 +33,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+    main()
