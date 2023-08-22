@@ -1,6 +1,5 @@
 import heapq
-import unittest
-from typing import List, Optional
+from unittest import TestCase
 
 
 class ListNode:
@@ -11,7 +10,7 @@ class ListNode:
 
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
         head = tail = ListNode()
         candidates = []
         for list_node in lists:
@@ -27,7 +26,7 @@ class Solution:
         return head.next
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -51,7 +50,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

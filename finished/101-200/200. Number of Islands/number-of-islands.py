@@ -1,9 +1,8 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid: [[str]]) -> int:
         num_islands = 0
         width, height = len(grid[0]), len(grid)
         y = 0
@@ -17,7 +16,7 @@ class Solution:
             y += 1
         return num_islands
 
-    def floodFillID(self, grid: List[List[str]], x: int, y: int, ff_id: str):
+    def floodFillID(self, grid: [[str]], x: int, y: int, ff_id: str):
         if int(grid[y][x]) != 1:
             return grid
         grid[y][x] = ff_id
@@ -41,7 +40,7 @@ class Solution:
         return grid
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -57,7 +56,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

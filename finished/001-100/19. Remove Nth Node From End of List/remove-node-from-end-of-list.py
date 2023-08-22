@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 class ListNode:
@@ -11,7 +10,7 @@ class ListNode:
 # O(2n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
         if not head.next:
             return None
 
@@ -32,7 +31,7 @@ class Solution:
         return head
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -41,7 +40,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

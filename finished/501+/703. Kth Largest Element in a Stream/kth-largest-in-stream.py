@@ -1,12 +1,11 @@
-import unittest
+from unittest import TestCase
 from bisect import insort
-from typing import List
 
 
 # O()
 class KthLargest:
 
-    def __init__(self, k: int, nums: List[int]):
+    def __init__(self, k: int, nums: [int]):
         self.k = k
         nums.sort()
         self.numbers = nums
@@ -16,7 +15,7 @@ class KthLargest:
         return self.numbers[-self.k]
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def test_solution(self):
         nums = [4, 5, 8, 2]
         k = 3
@@ -31,7 +30,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,13 +1,12 @@
 import heapq
-import unittest
+from unittest import TestCase
 from collections import defaultdict
-from typing import List
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums: [int], k: int) -> [int]:
         freq = defaultdict(lambda: 0)  # start frequency counting from 0
         for num in nums:
             freq[num] -= 1  # go negative for heapq
@@ -20,7 +19,7 @@ class Solution:
         return nums
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -33,7 +32,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

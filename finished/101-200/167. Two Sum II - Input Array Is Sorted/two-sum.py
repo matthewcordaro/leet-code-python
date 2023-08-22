@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+    def twoSum(self, numbers: [int], target: int) -> [int]:
         j = len(numbers) - 1
         for i in range(len(numbers)):
             # if j < i: return []
@@ -15,7 +14,7 @@ class Solution:
                 return [i + 1, j + 1]
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -24,7 +23,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

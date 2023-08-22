@@ -1,12 +1,11 @@
-import unittest
+from unittest import TestCase
 from collections import defaultdict
-from typing import List
 
 
 # O(n log(m))  n is number of cards m is number of unique cards
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
+    def isNStraightHand(self, hand: [int], groupSize: int) -> bool:
         if len(hand) % groupSize != 0:
             return False
         card_piles = defaultdict(lambda: 0)
@@ -30,7 +29,7 @@ class Solution:
         return len(card_piles) == 0  # True if no cards left
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -44,7 +43,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

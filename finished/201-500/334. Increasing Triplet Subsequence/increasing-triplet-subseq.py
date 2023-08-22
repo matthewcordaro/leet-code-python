@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def increasingTriplet(self, nums: List[int]) -> bool:
+    def increasingTriplet(self, nums: [int]) -> bool:
         length = len(nums)
         if length < 3:
             return False
@@ -27,7 +26,7 @@ class Solution:
 
     # NOT A SOLUTION TO Increasing Triplet Subsequence
     # noinspection PyMethodMayBeStatic
-    def increasingTripletSubarray(self, nums: List[int]) -> bool:
+    def increasingTripletSubarray(self, nums: [int]) -> bool:
         if len(nums) < 3:
             return False
         last_ok = nums[0] < nums[1]
@@ -36,13 +35,12 @@ class Solution:
             if last_ok:
                 if last_num < num:
                     return True
-                last_ok = False
             last_ok = last_num < num
             last_num = num
         return False
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -57,7 +55,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

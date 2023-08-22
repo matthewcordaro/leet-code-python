@@ -1,5 +1,4 @@
-import unittest
-from typing import List, Optional
+from unittest import TestCase
 
 
 # Definition for singly-linked list.
@@ -11,14 +10,14 @@ class ListNode:
 
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
         if len(lists) == 0:
             return None
         if len(lists) == 1:
             return lists[0]
 
-        solution: Optional[ListNode] = ListNode()
-        last_node_in_solution: Optional[ListNode] = solution
+        solution: ListNode = ListNode()
+        last_node_in_solution: ListNode = solution
 
         total_nodes = 0
         for list_list in lists:
@@ -52,7 +51,7 @@ class Solution:
         return solution.next  # solution is after root.
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -76,7 +75,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

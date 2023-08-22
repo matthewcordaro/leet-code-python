@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 class ListNode:
@@ -11,7 +10,7 @@ class ListNode:
 # O(n+m)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd(self, head: ListNode | None, n: int) -> ListNode | None:
         rabbit = turtle = head
 
         while (n := n - 1) >= 0:
@@ -28,16 +27,17 @@ class Solution:
         return head
 
 
-# class TestSolution(unittest.TestCase):
-#   def setUp(self):
-#     self.sol = Solution()
-#
-#   def test_solution(self):
-#     self.assertEqual(LL([1,2,3,5]), self.sol.removeNthFromEnd(LL([1,2,3,4,5]), 2))
+class TestSolution(TestCase):
+    def setUp(self):
+        self.sol = Solution()
+
+    def test_solution(self):
+        # self.assertEqual(LL([1, 2, 3, 5]), self.sol.removeNthFromEnd(LL([1, 2, 3, 4, 5]), 2))
+        pass
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

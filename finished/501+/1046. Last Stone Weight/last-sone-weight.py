@@ -1,12 +1,11 @@
-import unittest
-from typing import List
+from unittest import TestCase
 import heapq
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def lastStoneWeight(self, stones: List[int]) -> int:
+    def lastStoneWeight(self, stones: [int]) -> int:
         stones = [-num for num in stones]
         heapq.heapify(stones)
         while len(stones) > 1:
@@ -16,7 +15,7 @@ class Solution:
         return -stones[0] if stones else 0
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -27,7 +26,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

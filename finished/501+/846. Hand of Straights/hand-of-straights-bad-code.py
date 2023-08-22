@@ -1,10 +1,9 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
-    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
+    def isNStraightHand(self, hand: [int], groupSize: int) -> bool:
         if len(hand) % groupSize != 0:
             return False
         hand.sort()
@@ -29,7 +28,7 @@ class Solution:
         return groups
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -39,7 +38,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

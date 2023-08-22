@@ -1,7 +1,5 @@
 from __future__ import annotations
-
-import unittest
-from typing import List, Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -14,16 +12,16 @@ class TreeNode:
 
 class Solution:
     def __init__(self):
-        self.solution: List[int] = []
+        self.solution: [int] = []
 
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+    def rightSideView(self, root: TreeNode | None) -> [int]:
         if root is None:
             return []
         self.solution = [root.val]
         self.helper(root, 0)
         return self.solution
 
-    def helper(self, root: Optional[TreeNode], level: int):
+    def helper(self, root: TreeNode | None, level: int):
         if root is None:
             return
         next_level = level + 1
@@ -38,7 +36,7 @@ class Solution:
         self.helper(root.left, next_level)
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -47,7 +45,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

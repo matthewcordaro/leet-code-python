@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(log n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums: [int], target: int) -> int:
         # left and right pointers
         left, right = 0, len(nums) - 1
 
@@ -22,7 +21,7 @@ class Solution:
         return -1
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -38,7 +37,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

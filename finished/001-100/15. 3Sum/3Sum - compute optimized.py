@@ -1,13 +1,12 @@
-import unittest
+from unittest import TestCase
 from collections import Counter
 from itertools import combinations
-from typing import List
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]] | set[tuple[int, int, int]]:
         n, p, z = Counter(), Counter(), 0  # For O(1) look-up times
         for num in nums:
             if num > 0:
@@ -27,6 +26,7 @@ class Solution:
         def pairs_compliments(a, b):
             for i, j in combinations(a.elements(), 2):
                 if (k := -(i + j)) in b:
+                    # noinspection PyTypeChecker
                     sol.add(tuple(sorted([i, j, k])))
 
         pairs_compliments(p, n)
@@ -34,7 +34,7 @@ class Solution:
         return sol
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -285,7 +285,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

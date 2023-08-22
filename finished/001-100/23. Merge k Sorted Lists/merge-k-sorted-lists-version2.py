@@ -1,6 +1,5 @@
-import unittest
+from unittest import TestCase
 from bisect import insort
-from typing import List, Optional
 
 
 # Definition for singly-linked list.
@@ -16,7 +15,7 @@ class Solution:
         ListNode.__lt__ = lambda this, other: this.val < other.val
 
     # noinspection PyMethodMayBeStatic
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
         # Remove any blanks
         lists = list(filter(lambda a: a is not None and a != [], lists))
         # Edge cases
@@ -48,7 +47,7 @@ class Solution:
         return solution.next
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -72,7 +71,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

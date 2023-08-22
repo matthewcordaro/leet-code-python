@@ -1,5 +1,4 @@
-import unittest
-from typing import List, Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -15,7 +14,7 @@ class Solution:
     def __init__(self):
         self.solution: [[int]] = None
 
-    def traverse(self, node: Optional[TreeNode], level: int):
+    def traverse(self, node: TreeNode | None, level: int):
         if not node:
             return
 
@@ -26,14 +25,23 @@ class Solution:
         self.traverse(node.left, level + 1)
         self.traverse(node.right, level + 1)
 
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+    def levelOrder(self, root: TreeNode | None) -> [[int]]:
         self.solution = []
         self.traverse(root, 0)
         return self.solution
 
 
+class TestSolution(TestCase):
+    def setUp(self):
+        self.sol = Solution()
+
+    def test_solution(self):
+        # self.assertEqual(0, self.sol.traverse())
+        pass
+
+
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

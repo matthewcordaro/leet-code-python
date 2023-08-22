@@ -1,11 +1,11 @@
-import unittest
 from bisect import *
-from typing import List, Callable
+from unittest import TestCase
+from typing import Callable
 
 
 # O(m*n)
 class IndexedInterval:
-    def __init__(self, index: int, interval: List[int]):
+    def __init__(self, index: int, interval: [int]):
         self.index = index
         self.low = interval[0]
         self.high = interval[1]
@@ -29,7 +29,7 @@ class IndexedInterval:
 
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
+    def minInterval(self, intervals: [[int]], queries: [int]) -> [int]:
         solution = []
         l_sorted: list[IndexedInterval] = []  # interval low num index table
         h_sorted: list[IndexedInterval] = []  # interval high num index table
@@ -54,7 +54,7 @@ class Solution:
         return solution
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -68,7 +68,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,18 +1,17 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(n+m)
 # Each loop takes care of outermost shell of rectangle
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+    def spiralOrder(self, matrix: [[int]]) -> [int]:
         if matrix is []:
             return []
 
         left, top, right, bottom = 0, 0, len(matrix[0]) - 1, len(matrix) - 1  # edges
         number_of_cells = len(matrix[0]) * len(matrix)
-        solution: List[int] = []
+        solution: [int] = []
 
         while len(solution) < number_of_cells:
             for x in range(left, right + 1):
@@ -33,7 +32,7 @@ class Solution:
         return solution
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -45,7 +44,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,18 +1,17 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: [int]) -> int:
         a = 0
         for n in nums:
             a ^= n
         return a
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -24,7 +23,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfit(self, prices: [int]) -> int:
         max_profit = 0
         left_low = 0
         for right_index in range(1, len(prices)):
@@ -19,7 +18,7 @@ class Solution:
         return max_profit
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -32,7 +31,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

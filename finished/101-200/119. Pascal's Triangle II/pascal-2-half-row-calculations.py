@@ -1,5 +1,4 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
@@ -7,7 +6,7 @@ class Solution:
     def __init__(self):
         self.pascal_triangle = [[1], [1, 1]]
 
-    def getRow(self, row_index: int) -> List[int]:
+    def getRow(self, row_index: int) -> [int]:
         # Solution not stored? Keep building
         while row_index > len(self.pascal_triangle) - 1:
             bottom_row = self.pascal_triangle[-1]
@@ -29,7 +28,7 @@ class Solution:
         return self.pascal_triangle[row_index]
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -68,7 +67,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
         solution = []
         nums_len = len(nums)
         for i in range(0, nums_len - 2):
@@ -22,7 +21,7 @@ class Solution:
         return solution
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -36,7 +35,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

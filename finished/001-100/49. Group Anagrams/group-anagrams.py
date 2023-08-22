@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: [str]) -> [[str]]:
         solution = {}
         for string in strs:
             sid = tuple(sorted(string))
@@ -16,7 +15,7 @@ class Solution:
         return list(solution.values())
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -25,7 +24,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,5 +1,4 @@
 import time  # use time.time_ns()
-from typing import List, Dict
 from bisect import insort_right
 
 
@@ -18,10 +17,10 @@ class User:
         self.id: int = idNumber
         self.name: str = name
         self.follows: set[int] = set()
-        self.tweets: List[Tweet] = []
+        self.tweets: [Tweet] = []
 
 
-def convertTweetListToIDList(tweets: List[Tweet]) -> List[int]:
+def convertTweetListToIDList(tweets: [Tweet]) -> [int]:
     tweet_ids = []
     for tweet in tweets:
         tweet_ids.append(tweet.tweetId)
@@ -31,7 +30,7 @@ def convertTweetListToIDList(tweets: List[Tweet]) -> List[int]:
 class Twitter:
     def __init__(self):
         # key: `userId`  val: `User`
-        self.users: Dict[int, User] = {}
+        self.users: dict[int, User] = {}
 
     def makeUserExist(self, userId: int) -> bool:
         if userId not in self.users:
@@ -43,12 +42,12 @@ class Twitter:
         self.makeUserExist(userId)
         self.users[userId].tweets.append(Tweet(tweetId, time.time_ns()))
 
-    def getNewsFeed(self, userId: int) -> List[int]:
+    def getNewsFeed(self, userId: int) -> [int]:
         if self.makeUserExist(userId):
             return []
 
         # Start with the user's tweets
-        tweet_list: List[Tweet] = self.users[userId].tweets[-10:]
+        tweet_list: [Tweet] = self.users[userId].tweets[-10:]
         tweet_list.reverse()  # to put in proper order
 
         # for every followee we search their last 10 tweets,

@@ -1,16 +1,15 @@
-import unittest
+from unittest import TestCase
 from collections import Counter
-from typing import List
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums: [int], k: int) -> [int]:
         return [num for num, _ in Counter(nums).most_common(k)]
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -23,7 +22,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

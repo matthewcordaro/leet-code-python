@@ -1,5 +1,4 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 class Direction:
@@ -12,13 +11,13 @@ class Direction:
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+    def spiralOrder(self, matrix: [[int]]) -> [int]:
         if matrix is []:
             return []
 
         width, height = len(matrix[0]), len(matrix)
         size = width * height
-        l: List[int] = []
+        l: [int] = []
         visited = -200  # a value that matrix[i][j] can never be
 
         # Where to start
@@ -56,7 +55,7 @@ class Solution:
         return l
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -65,7 +64,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

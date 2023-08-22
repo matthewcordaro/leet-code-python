@@ -1,5 +1,4 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(n)
@@ -8,7 +7,7 @@ from typing import List
 #   if < 0 reset to shift left starting of subarray window
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def maxSubArray(self, nums: List[int]) -> int:
+    def maxSubArray(self, nums: [int]) -> int:
         global_max = nums[0]
         total = 0
         for num in nums:
@@ -19,7 +18,7 @@ class Solution:
         return global_max
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -28,7 +27,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

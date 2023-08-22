@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
+    def minInterval(self, intervals: [[int]], queries: [int]) -> [int]:
         # calc interval size by subtracting: right - left + 1
         size_of_interval = []
         for (left, right) in intervals:
@@ -25,7 +24,7 @@ class Solution:
         return solution
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -35,7 +34,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

@@ -1,35 +1,40 @@
-import unittest
-from typing import List, Iterable
+from unittest import TestCase
+from typing import Iterable
 import numpy as np
 
 
 # Is there a backtracking solution?
 # O()
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: [[str]]) -> bool:
         board = np.array(board)
         for line in board:  # Rows
-            if not self.isValidSudokuPart(line): return False
+            if not self.isValidSudokuPart(line):
+                return False
         for m in range(3, 10, 3):  # Boxes
             for n in range(3, 10, 3):
-                if not self.isValidSudokuPart(np.nditer(board[m - 3:m, n - 3:n])): return False
+                if not self.isValidSudokuPart(np.nditer(board[m - 3:m, n - 3:n])):
+                    return False
         board = board.T
         for line in board:  # Columns
-            if not self.isValidSudokuPart(line): return False
+            if not self.isValidSudokuPart(line):
+                return False
         return True
 
     @staticmethod
     def isValidSudokuPart(i: Iterable[str]) -> bool:
         is_found = [False for _ in range(9)]
         for val in i:
-            if val == '.': continue
+            if val == '.':
+                continue
             val = int(val) - 1
-            if is_found[val]: return False
+            if is_found[val]:
+                return False
             is_found[val] = True
         return True
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -48,7 +53,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

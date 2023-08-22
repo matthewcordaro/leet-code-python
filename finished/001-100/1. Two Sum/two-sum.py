@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O(n^2)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         sublist = [target - num for num in nums]
         for i, number in enumerate(nums):
             for j, sub_number in enumerate(sublist[i + 1:]):
@@ -16,7 +15,7 @@ class Solution:
 # HashMap O(n)
 class Solution2:
     # noinspection PyMethodMayBeStatic
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         hash_dictionary = {}
         for i, number in enumerate(nums):
             if number in hash_dictionary.keys():
@@ -24,7 +23,7 @@ class Solution2:
             hash_dictionary[target - number] = i
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
         self.sol2 = Solution2()
@@ -37,7 +36,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

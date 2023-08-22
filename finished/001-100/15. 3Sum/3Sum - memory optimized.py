@@ -1,12 +1,11 @@
 import bisect
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]] | set[tuple[int, int, int]]:
         # Sort. Then working from the outsides in to the (zero most) inflection pt,
         # find solutions: index j, such that i < j < k and num[j] in nums
         nums = sorted(nums)
@@ -24,7 +23,7 @@ class Solution:
         return sol
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -36,7 +35,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

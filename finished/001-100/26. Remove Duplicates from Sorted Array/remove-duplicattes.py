@@ -1,11 +1,10 @@
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums: [int]) -> int:
         left = 0
         for right in range(len(nums)):
             if nums[left] != nums[right]:
@@ -14,7 +13,7 @@ class Solution:
         return left + 1
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -23,7 +22,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

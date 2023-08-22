@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 # Definition for singly-linked list.
@@ -12,7 +11,7 @@ class ListNode:
 # O(n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(self, list1: ListNode | None, list2: ListNode | None) -> ListNode | None:
         # returner + a pointer for help
         ret = p = ListNode()
 
@@ -36,7 +35,7 @@ class Solution:
         return ret.next
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -45,7 +44,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

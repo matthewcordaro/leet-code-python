@@ -1,7 +1,5 @@
 from __future__ import annotations
-
-import unittest
-from typing import List, Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -14,12 +12,12 @@ class TreeNode:
 
 class Solution:
     @staticmethod
-    def rightSideView(root: Optional[TreeNode]) -> List[int]:
+    def rightSideView(root: TreeNode | None) -> [int]:
         if not root:
             return []
         solution: [int] = []
         current = root
-        stack: [Optional[TreeNode]] = []
+        stack: [TreeNode | None] = []
         level = 0  # How to maintain a level when going right????
         while True:
             if current is not None:
@@ -39,8 +37,16 @@ class Solution:
 # current  = 2
 # stack    = [0]
 # solution = [1]
+class TestSolution(TestCase):
+    def setUp(self):
+        self.sol = Solution()
+
+    # def test_solution(self):
+    #   self.assertEqual(self.sol.rightSideView([]), 0)
+
+
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

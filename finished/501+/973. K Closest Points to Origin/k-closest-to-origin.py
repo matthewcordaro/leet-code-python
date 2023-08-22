@@ -1,12 +1,11 @@
 import heapq
-import unittest
-from typing import List
+from unittest import TestCase
 
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+    def kClosest(self, points: [[int]], k: int) -> [[int]]:
         distances = []
         for point in points:
             x, y = point
@@ -17,7 +16,7 @@ class Solution:
         return points
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -26,7 +25,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':
