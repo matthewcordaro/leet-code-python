@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -12,11 +11,11 @@ class TreeNode:
 
 # O(n)
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+    def maxDepth(self, root: TreeNode | None) -> int:
         return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -25,7 +24,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

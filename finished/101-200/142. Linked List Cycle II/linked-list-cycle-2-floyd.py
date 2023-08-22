@@ -1,6 +1,3 @@
-from typing import Optional
-
-
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -10,7 +7,7 @@ class ListNode:
 # O(n) - Memory: O(1)  Floyd's Algo
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def detectCycle(self, head: ListNode | None) -> ListNode | None:
         turtle = rabbit = head
         while rabbit and rabbit.next:
             turtle, rabbit = turtle.next, rabbit.next.next  # Move by 1 and 2 respectively

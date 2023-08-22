@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 # Definition for singly-linked list.
@@ -13,8 +12,8 @@ class ListNode:
 # The better way with memory.
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        rev: Optional[ListNode] = None
+    def reverseList(self, head: ListNode | None) -> ListNode | None:
+        rev: ListNode | None = None
         while head is not None:
             temp = head.next
             head.next = rev
@@ -28,15 +27,15 @@ class Solution:
 # But this is best for computation.
 class Solution2:
     # noinspection PyMethodMayBeStatic
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        r: Optional[ListNode] = None
+    def reverseList(self, head: ListNode | None) -> ListNode | None:
+        r: ListNode | None = None
         while head is not None:
             r = ListNode(head.val, r)
             head = head.next
         return r
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -45,7 +44,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

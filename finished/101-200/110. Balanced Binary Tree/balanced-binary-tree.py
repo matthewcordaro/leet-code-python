@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -13,10 +12,10 @@ class TreeNode:
 # O(n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+    def isBalanced(self, root: TreeNode | None) -> bool:
         # Compare each side height at each node with dfs
         # -1 means unbalanced
-        def dfs(r: Optional[TreeNode]) -> int:
+        def dfs(r: TreeNode | None) -> int:
             # None case - balanced
             if r is None:
                 return 0
@@ -36,7 +35,7 @@ class Solution:
         return dfs(root) != -1
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -45,7 +44,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

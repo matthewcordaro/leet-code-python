@@ -1,5 +1,5 @@
-import unittest
-from heapq import *
+from unittest import TestCase
+from heapq import heappush
 
 
 def binary_search(array, n, low, high=None) -> int:
@@ -40,7 +40,7 @@ class Solution:
         return len(subseq_is[0][1]) if subseq_is else 0
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -216,7 +216,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

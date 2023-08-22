@@ -1,4 +1,3 @@
-from typing import Optional
 from unittest import TestCase
 
 
@@ -11,7 +10,7 @@ class ListNode:
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def middleNode(self, head: ListNode | None) -> ListNode | None:
         current_middle = head
         c = 0
         while head:

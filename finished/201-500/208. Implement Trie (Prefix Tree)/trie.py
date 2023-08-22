@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 
 
 class TrieNode:
@@ -77,7 +77,7 @@ class Trie:
         return False
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Trie()
 
@@ -98,7 +98,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

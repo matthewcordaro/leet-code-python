@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 
 
 # O()
@@ -25,7 +25,7 @@ class Solution:
         return end
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -44,7 +44,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

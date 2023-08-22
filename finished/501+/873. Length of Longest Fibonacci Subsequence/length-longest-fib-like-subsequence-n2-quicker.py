@@ -1,6 +1,6 @@
 from bisect import bisect_right
 from collections import defaultdict
-import unittest
+from unittest import TestCase
 
 
 # O(n^2) speed, O(n)
@@ -33,7 +33,7 @@ class Solution:
         return longest_subsequence
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -272,7 +272,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

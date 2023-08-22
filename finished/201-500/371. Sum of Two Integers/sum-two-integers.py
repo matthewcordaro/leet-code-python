@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 
 
 # O(b) b = number of bits
@@ -15,7 +15,7 @@ class Solution:
         return (a & 0xFFFFFFFF) if b > 0 else a
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -29,7 +29,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

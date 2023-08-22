@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -12,7 +11,7 @@ class TreeNode:
 
 # O(n)
 class Solution:
-    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+    def isSameTree(self, p: TreeNode | None, q: TreeNode | None) -> bool:
         if not (p or q):
             return True  # Both are None
         if not (p and q):
@@ -22,7 +21,7 @@ class Solution:
             and self.isSameTree(p.right, q.right)
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -31,7 +30,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution)
 
 
 if __name__ == '__main__':

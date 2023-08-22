@@ -1,6 +1,3 @@
-from typing import Optional
-
-
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -10,7 +7,7 @@ class ListNode:
 # O(n)
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle(self, head: ListNode | None) -> bool:
         c, s = 0, set()
         while head:
             s.add(head)

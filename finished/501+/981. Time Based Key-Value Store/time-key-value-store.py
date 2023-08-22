@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 import bisect
 
 
@@ -28,7 +28,7 @@ class TimeMap:
         return v
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.tm = TimeMap()
         self.commands = None
@@ -60,7 +60,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

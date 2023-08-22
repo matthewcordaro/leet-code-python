@@ -1,4 +1,3 @@
-from typing import Optional
 from unittest import TestCase
 
 
@@ -12,7 +11,7 @@ class ListNode:
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def reorderList(self, head: Optional[ListNode]) -> None:
+    def reorderList(self, head: ListNode | None) -> None:
         if not head or not head.next:
             return head
         # Find Middle (tortoise and the hair)

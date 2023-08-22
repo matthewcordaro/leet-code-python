@@ -1,4 +1,3 @@
-from typing import Optional
 from unittest import TestCase
 
 
@@ -10,8 +9,8 @@ class ListNode:
 
 class MinStack:
     def __init__(self):
-        self.stack: Optional[ListNode] = None
-        self.minStack: Optional[ListNode] = None
+        self.stack: ListNode | None = None
+        self.minStack: ListNode | None = None
 
     def push(self, val: int) -> None:
         # Keep a min stack with the main stack

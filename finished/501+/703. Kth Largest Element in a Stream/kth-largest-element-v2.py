@@ -16,10 +16,13 @@ class KthLargest:
 
 class TestSolution(TestCase):
     def setUp(self):
-        self.sol = Solution()
+        self.sol = KthLargest(3, [4, 5, 8, 2])
 
     def test_solution(self):
-        self.assertEqual(0, self.sol.someFunction(3, [4, 5, 8, 2]))
+        adders = [3, 5, 10, 9, 4]
+        kth_largest = [4, 5, 5, 8, 8]
+        for adds, kth in zip(adders, kth_largest):
+            self.assertEqual(kth, self.sol.add(adds))
 
 
 def main():

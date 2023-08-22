@@ -1,5 +1,4 @@
-import unittest
-from typing import Optional
+from unittest import TestCase
 
 
 # Definition for a binary tree node.
@@ -13,10 +12,10 @@ class TreeNode:
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+    def diameterOfBinaryTree(self, root: TreeNode | None) -> int:
         max_diam = 0
 
-        def dfs(r: Optional[TreeNode]) -> int:
+        def dfs(r: TreeNode | None) -> int:
             nonlocal max_diam
 
             # None case - 0 depth
@@ -37,7 +36,7 @@ class Solution:
         return max_diam
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -46,7 +45,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':

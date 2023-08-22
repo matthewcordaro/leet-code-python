@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase
 from collections import deque
 
 
@@ -26,7 +26,7 @@ class Solution:
         return len(stack) == 0
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
 
@@ -44,7 +44,7 @@ class TestSolution(unittest.TestCase):
 
 
 def main():
-    unittest.main()
+    super(TestSolution())
 
 
 if __name__ == '__main__':
