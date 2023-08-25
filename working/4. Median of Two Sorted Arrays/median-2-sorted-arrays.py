@@ -5,8 +5,16 @@ from unittest import TestCase
 class Solution:
     # noinspection PyMethodMayBeStatic
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
-        median: float = sum(nums1) / 2
-        return median
+        total = len(nums1) + len(nums2)
+        even = total % 2 is 0
+        mid = (len(nums1) + len(nums2)) // 2
+        i1, i2 = len(nums1) // 2, len(nums2) // 2  # Starting positions for search
+        found = False
+        while not found:
+            if nums1[i1] > nums2[i2]:
+                # i2 increase and i1 decrease
+                pass
+        return mid
 
 
 class TestSolution(TestCase):
