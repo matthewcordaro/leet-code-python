@@ -18,7 +18,6 @@ class Solution:
         return solution
 
 
-
 class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
