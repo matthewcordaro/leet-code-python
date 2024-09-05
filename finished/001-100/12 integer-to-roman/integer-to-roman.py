@@ -24,7 +24,7 @@ class TestSolution(TestCase):
         self.assertEqual("MMMDCCXLIX", self.sol.intToRoman(3749))
         self.assertEqual("LVIII", self.sol.intToRoman(58))
         self.assertEqual("MCMXCIV", self.sol.intToRoman(1994))
-        self.assertEqual("XII", self.sol.intToRoman(13))
+        self.assertEqual("XIII", self.sol.intToRoman(13))
 
 
 def main():
