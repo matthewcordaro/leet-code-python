@@ -3,6 +3,7 @@ from unittest import TestCase
 
 # O()
 class Solution:
+    # noinspection PyMethodMayBeStatic
     def majorityElement(self, nums: list[int]) -> int:
         lead = 0
         leading_candidate = None
