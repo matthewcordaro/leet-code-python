@@ -1,10 +1,9 @@
-from enum import nonmember
 from unittest import TestCase
 
 # O()
 class Solution:
     # noinspection PyMethodMayBeStatic
-    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) float:
+    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
         # Ensure nums1 is the smaller array to optimize binary search
         if len(nums1) > len(nums2):
             nums1, nums2 = nums2, nums1
