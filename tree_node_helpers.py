@@ -29,3 +29,17 @@ def create_tree(vals: List[Optional[int]]) -> Optional[TreeNode]:
             if kids:
                 node.right = kids.pop()
     return root
+
+def trees_are_equal(node1: TreeNode, node2: TreeNode) -> bool:
+    """
+    Helper function to compare two binary trees for equality.
+    """
+    if not node1 and not node2:
+        return True
+    if not node1 or not node2:
+        return False
+    return (
+            node1.val == node2.val
+            and trees_are_equal(node1.left, node2.left)
+            and trees_are_equal(node1.right, node2.right)
+    )
