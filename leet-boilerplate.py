@@ -8,6 +8,7 @@ class Solution:
         pass
 
 
+# noinspection SpellCheckingInspection
 class TestSolution(TestCase):
     def setUp(self):
         self.sol = Solution()
