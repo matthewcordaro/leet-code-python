@@ -5,15 +5,19 @@ from unittest import TestCase
 class Solution:
     # noinspection PyMethodMayBeStatic
     def rob(self, nums: list[int]) -> int:
+        # Base Cases
         if not nums: return 0
         if len(nums) <= 2: return max(nums)
-        memo = [-1 for _ in nums]
-        memo[0] = nums[0]
-        memo[1] = max(nums[0], nums[1])
-        memo[2] = max(nums[0] + nums[2], nums[1])
-        for i in range(3, len(nums)):
-            memo[i] = nums[i] + max(memo[i-2], memo[i-3])
-        return max(memo[-1], memo[-2])
+
+        # Track the last two house's max
+        two_ago = nums[0]
+        one_ago = max(nums[0], nums[1])
+        for i in range(2, len(nums)):
+            # take this house or skip
+            current = max(nums[i] + two_ago, one_ago)
+            # setup for next house
+            two_ago, one_ago = one_ago, current
+        return one_ago  # end of the block
 
 
 # noinspection SpellCheckingInspection
